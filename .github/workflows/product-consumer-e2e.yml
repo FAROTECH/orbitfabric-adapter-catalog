@@ -1,0 +1,63 @@
+name: Product consumer E2E
+
+on:
+  pull_request:
+    paths:
+      - catalog.json
+      - e2e/**
+      - tools/product_consumer_e2e.py
+      - .github/workflows/product-consumer-e2e.yml
+  push:
+    branches:
+      - main
+    paths:
+      - catalog.json
+      - e2e/**
+      - tools/product_consumer_e2e.py
+      - .github/workflows/product-consumer-e2e.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  product-consumer-e2e:
+    name: ${{ matrix.adapter }} ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - adapter: openobsw-opensvf
+            version: 0.1.0
+            lock: e2e/locks/openobsw-opensvf-0.1.0.json
+          - adapter: openc3-cosmos
+            version: 0.1.0
+            lock: e2e/locks/openc3-cosmos-0.1.0.json
+          - adapter: fprime
+            version: 0.1.1
+            lock: e2e/locks/fprime-0.1.1.json
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install exact OrbitFabric Core P0 baseline
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "git+https://github.com/FAROTECH/orbitfabric.git@4ba7a0b51a071b91150be4271fef6c6010bc80fd"
+
+      - name: Install exact GitHub Release Source P1 baseline
+        run: |
+          python -m pip install --no-deps "git+https://github.com/FAROTECH/orbitfabric-github-release-source.git@710a4ccb0a1b8c02e36bc44789464d88ab3ab35d"
+
+      - name: Execute product consumer E2E
+        run: |
+          python tools/product_consumer_e2e.py \
+            --catalog-url "https://raw.githubusercontent.com/FAROTECH/orbitfabric-adapter-catalog/874b8814a802c8b5d7587a0290e7a660727db0e8/catalog.json" \
+            --adapter "${{ matrix.adapter }}" \
+            --version "${{ matrix.version }}" \
+            --lock "${{ matrix.lock }}"

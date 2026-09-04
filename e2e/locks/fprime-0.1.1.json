@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "fprime"
+      },
+      "release_version": "0.1.1",
+      "release_descriptor": {
+        "sha256": "724eb67299150887167dfce8aa3ea117a163c79b6fcaff6ab105dfd35daf7464"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "dee3a990dfb3fdc051924795c7422d9d9516b40c43cc418a09b5c11b06d59145"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}
