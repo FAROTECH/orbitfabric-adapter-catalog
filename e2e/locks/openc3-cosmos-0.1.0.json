@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "openc3-cosmos"
+      },
+      "release_version": "0.1.0",
+      "release_descriptor": {
+        "sha256": "2509a1c1c132f647abba0ebe02af49627ebbbed58d62555efd60d7cb30b48d4f"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "5d3f6ffc02b0b1b785683165a9cc596245d3358c40df764260ba3f6a779d240f"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}

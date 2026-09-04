@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "openobsw-opensvf"
+      },
+      "release_version": "0.1.0",
+      "release_descriptor": {
+        "sha256": "ef1b568c06a1573b580bbb91308b1311b81ba65dca29331fcf1610fc7ee5c016"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "ed4a6316d66fc7267320083d3bbd482374f529b797937d5ef85e805e45230696"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}
