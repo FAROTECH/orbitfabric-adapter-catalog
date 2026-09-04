@@ -1,0 +1,95 @@
+{
+  "kind": "orbitfabric.adapter_catalog",
+  "catalog_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "openobsw-opensvf"
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "release_descriptor_digest": {
+            "algorithm": "sha256",
+            "value": "ef1b568c06a1573b580bbb91308b1311b81ba65dca29331fcf1610fc7ee5c016"
+          },
+          "sources": [
+            {
+              "binding": "github-farotech-openobsw-opensvf",
+              "release_ref": "v0.1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "openc3-cosmos"
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "release_descriptor_digest": {
+            "algorithm": "sha256",
+            "value": "2509a1c1c132f647abba0ebe02af49627ebbbed58d62555efd60d7cb30b48d4f"
+          },
+          "sources": [
+            {
+              "binding": "github-farotech-openc3-cosmos",
+              "release_ref": "v0.1.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "fprime"
+      },
+      "releases": [
+        {
+          "version": "0.1.1",
+          "release_descriptor_digest": {
+            "algorithm": "sha256",
+            "value": "724eb67299150887167dfce8aa3ea117a163c79b6fcaff6ab105dfd35daf7464"
+          },
+          "sources": [
+            {
+              "binding": "github-farotech-fprime",
+              "release_ref": "v0.1.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_bindings": [
+    {
+      "id": "github-farotech-openobsw-opensvf",
+      "provider": "github-release",
+      "config": {
+        "repository": "FAROTECH/orbitfabric-openobsw-opensvf-adapter"
+      }
+    },
+    {
+      "id": "github-farotech-openc3-cosmos",
+      "provider": "github-release",
+      "config": {
+        "repository": "FAROTECH/orbitfabric-openc3-cosmos-adapter"
+      }
+    },
+    {
+      "id": "github-farotech-fprime",
+      "provider": "github-release",
+      "config": {
+        "repository": "FAROTECH/orbitfabric-fprime-adapter"
+      }
+    }
+  ]
+}
