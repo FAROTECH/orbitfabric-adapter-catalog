@@ -18,6 +18,9 @@ EXPECTED_RELEASES = {
     ("github.com/FAROTECH", "orbitfabric", "fprime", "0.1.1"): (
         "724eb67299150887167dfce8aa3ea117a163c79b6fcaff6ab105dfd35daf7464"
     ),
+    ("github.com/FAROTECH", "orbitfabric", "eds-cfs", "0.1.0"): (
+        "f1bc0df5417df23eaba8e51b37101568a300775d1d7dfdd1766ffa8c42631b39"
+    ),
 }
 
 
@@ -27,7 +30,7 @@ def load_catalog() -> AdapterCatalog:
 
 def test_catalog_parses_with_promoted_core_model() -> None:
     catalog = load_catalog()
-    assert len(catalog.adapters) >= 3
+    assert len(catalog.adapters) >= 4
 
 
 def test_canonical_release_anchors_are_exact() -> None:
@@ -78,6 +81,9 @@ def test_initial_github_bindings_point_to_canonical_adapter_repositories() -> No
     }
     assert bindings["github-farotech-fprime"].config == {
         "repository": "FAROTECH/orbitfabric-fprime-adapter"
+    }
+    assert bindings["github-farotech-eds-cfs"].config == {
+        "repository": "FAROTECH/orbitfabric-eds-cfs-adapter"
     }
 
 
