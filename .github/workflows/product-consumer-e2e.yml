@@ -37,6 +37,9 @@ jobs:
           - adapter: fprime
             version: 0.1.1
             lock: e2e/locks/fprime-0.1.1.json
+          - adapter: eds-cfs
+            version: 0.1.0
+            lock: e2e/locks/eds-cfs-0.1.0.json
 
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +60,7 @@ jobs:
       - name: Execute product consumer E2E
         run: |
           python tools/product_consumer_e2e.py \
-            --catalog-url "https://raw.githubusercontent.com/FAROTECH/orbitfabric-adapter-catalog/874b8814a802c8b5d7587a0290e7a660727db0e8/catalog.json" \
+            --catalog-url "https://raw.githubusercontent.com/FAROTECH/orbitfabric-adapter-catalog/${{ github.sha }}/catalog.json" \
             --adapter "${{ matrix.adapter }}" \
             --version "${{ matrix.version }}" \
             --lock "${{ matrix.lock }}"
