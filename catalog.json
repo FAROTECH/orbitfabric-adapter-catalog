@@ -67,6 +67,28 @@
           ]
         }
       ]
+    },
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "eds-cfs"
+      },
+      "releases": [
+        {
+          "version": "0.1.0",
+          "release_descriptor_digest": {
+            "algorithm": "sha256",
+            "value": "f1bc0df5417df23eaba8e51b37101568a300775d1d7dfdd1766ffa8c42631b39"
+          },
+          "sources": [
+            {
+              "binding": "github-farotech-eds-cfs",
+              "release_ref": "v0.1.0"
+            }
+          ]
+        }
+      ]
     }
   ],
   "source_bindings": [
@@ -89,6 +111,13 @@
       "provider": "github-release",
       "config": {
         "repository": "FAROTECH/orbitfabric-fprime-adapter"
+      }
+    },
+    {
+      "id": "github-farotech-eds-cfs",
+      "provider": "github-release",
+      "config": {
+        "repository": "FAROTECH/orbitfabric-eds-cfs-adapter"
       }
     }
   ]

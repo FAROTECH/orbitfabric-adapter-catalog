@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/FAROTECH",
+        "publisher": "orbitfabric",
+        "name": "eds-cfs"
+      },
+      "release_version": "0.1.0",
+      "release_descriptor": {
+        "sha256": "f1bc0df5417df23eaba8e51b37101568a300775d1d7dfdd1766ffa8c42631b39"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "8bb4b1e6f17ae1a2eda25dadfb9fd238d347458a24bb9ad18d0dd56904a06c60"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}
