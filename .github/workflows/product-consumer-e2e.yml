@@ -37,6 +37,9 @@ jobs:
           - adapter: fprime
             version: 0.1.1
             lock: e2e/locks/fprime-0.1.1.json
+          - adapter: fprime
+            version: 0.1.2
+            lock: e2e/locks/fprime-0.1.2.json
           - adapter: eds-cfs
             version: 0.1.0
             lock: e2e/locks/eds-cfs-0.1.0.json
