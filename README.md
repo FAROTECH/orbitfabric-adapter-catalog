@@ -18,7 +18,7 @@ Artifact membership remains owned by each adapter's `adapter-release.json` Relea
 ```text
 OpenOBSW/OpenSVF   0.1.0
 OpenC3 COSMOS      0.1.0
-F Prime            0.1.1
+F Prime            0.1.1, 0.1.2
 EDS-cFS            0.1.0
 ```
 

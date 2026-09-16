@@ -18,6 +18,9 @@ EXPECTED_RELEASES = {
     ("github.com/FAROTECH", "orbitfabric", "fprime", "0.1.1"): (
         "724eb67299150887167dfce8aa3ea117a163c79b6fcaff6ab105dfd35daf7464"
     ),
+    ("github.com/FAROTECH", "orbitfabric", "fprime", "0.1.2"): (
+        "42264663fbc1a67b98f6a0bb557ecd4f2710d4e27b01fdcfbf3cbba7ce24a040"
+    ),
     ("github.com/FAROTECH", "orbitfabric", "eds-cfs", "0.1.0"): (
         "f1bc0df5417df23eaba8e51b37101568a300775d1d7dfdd1766ffa8c42631b39"
     ),
