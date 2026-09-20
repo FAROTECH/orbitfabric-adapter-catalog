@@ -20,6 +20,12 @@ on:
 permissions:
   contents: read
 
+env:
+  ORBITFABRIC_CORE_REPOSITORY: FAROTECH/orbitfabric
+  ORBITFABRIC_CORE_REF: 4ba7a0b51a071b91150be4271fef6c6010bc80fd
+  ORBITFABRIC_RELEASE_SOURCE_REPOSITORY: FAROTECH/orbitfabric-github-release-source
+  ORBITFABRIC_RELEASE_SOURCE_REF: 710a4ccb0a1b8c02e36bc44789464d88ab3ab35d
+
 jobs:
   product-consumer-e2e:
     name: ${{ matrix.adapter }} ${{ matrix.version }}
@@ -54,16 +60,16 @@ jobs:
       - name: Install exact OrbitFabric Core P0 baseline
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "git+https://github.com/FAROTECH/orbitfabric.git@4ba7a0b51a071b91150be4271fef6c6010bc80fd"
+          python -m pip install "git+https://github.com/${ORBITFABRIC_CORE_REPOSITORY}.git@${ORBITFABRIC_CORE_REF}"
 
       - name: Install exact GitHub Release Source P1 baseline
         run: |
-          python -m pip install --no-deps "git+https://github.com/FAROTECH/orbitfabric-github-release-source.git@710a4ccb0a1b8c02e36bc44789464d88ab3ab35d"
+          python -m pip install --no-deps "git+https://github.com/${ORBITFABRIC_RELEASE_SOURCE_REPOSITORY}.git@${ORBITFABRIC_RELEASE_SOURCE_REF}"
 
       - name: Execute product consumer E2E
         run: |
           python tools/product_consumer_e2e.py \
-            --catalog-url "https://raw.githubusercontent.com/FAROTECH/orbitfabric-adapter-catalog/${{ github.sha }}/catalog.json" \
+            --catalog-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/catalog.json" \
             --adapter "${{ matrix.adapter }}" \
             --version "${{ matrix.version }}" \
             --lock "${{ matrix.lock }}"
