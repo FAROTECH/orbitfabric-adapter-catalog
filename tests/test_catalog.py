@@ -80,7 +80,7 @@ def test_initial_github_bindings_point_to_canonical_adapter_repositories() -> No
     catalog = load_catalog()
     bindings = {binding.id: binding for binding in catalog.source_bindings}
     assert bindings["github-farotech-openobsw-opensvf"].config == {
-        "repository": "FAROTECH/orbitfabric-openobsw-opensvf-adapter"
+        "repository": "OrbitFabric/orbitfabric-openobsw-opensvf-adapter"
     }
     assert bindings["github-farotech-openc3-cosmos"].config == {
         "repository": "OrbitFabric/orbitfabric-openc3-cosmos-adapter"
