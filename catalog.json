@@ -131,7 +131,7 @@
       "id": "github-farotech-openobsw-opensvf",
       "provider": "github-release",
       "config": {
-        "repository": "FAROTECH/orbitfabric-openobsw-opensvf-adapter"
+        "repository": "OrbitFabric/orbitfabric-openobsw-opensvf-adapter"
       }
     },
     {
