@@ -34,19 +34,28 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - adapter: openobsw-opensvf
+          - authority: github.com/FAROTECH
+            adapter: openobsw-opensvf
             version: 0.1.0
             lock: e2e/locks/openobsw-opensvf-0.1.0.json
-          - adapter: openc3-cosmos
+          - authority: github.com/FAROTECH
+            adapter: openc3-cosmos
             version: 0.1.0
             lock: e2e/locks/openc3-cosmos-0.1.0.json
-          - adapter: fprime
+          - authority: github.com/OrbitFabric
+            adapter: openc3-cosmos
+            version: 0.2.0
+            lock: e2e/locks/openc3-cosmos-0.2.0.json
+          - authority: github.com/FAROTECH
+            adapter: fprime
             version: 0.1.1
             lock: e2e/locks/fprime-0.1.1.json
-          - adapter: fprime
+          - authority: github.com/FAROTECH
+            adapter: fprime
             version: 0.1.2
             lock: e2e/locks/fprime-0.1.2.json
-          - adapter: eds-cfs
+          - authority: github.com/FAROTECH
+            adapter: eds-cfs
             version: 0.1.0
             lock: e2e/locks/eds-cfs-0.1.0.json
 
@@ -70,6 +79,7 @@ jobs:
         run: |
           python tools/product_consumer_e2e.py \
             --catalog-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/catalog.json" \
+            --authority "${{ matrix.authority }}" \
             --adapter "${{ matrix.adapter }}" \
             --version "${{ matrix.version }}" \
             --lock "${{ matrix.lock }}"
