@@ -15,6 +15,9 @@ EXPECTED_RELEASES = {
     ("github.com/FAROTECH", "orbitfabric", "openc3-cosmos", "0.1.0"): (
         "2509a1c1c132f647abba0ebe02af49627ebbbed58d62555efd60d7cb30b48d4f"
     ),
+    ("github.com/OrbitFabric", "orbitfabric", "openc3-cosmos", "0.2.0"): (
+        "50ca24731e759dffed1b8735ec408b57d4fab97fd49f17c7cdd8a5de378dc04c"
+    ),
     ("github.com/FAROTECH", "orbitfabric", "fprime", "0.1.1"): (
         "724eb67299150887167dfce8aa3ea117a163c79b6fcaff6ab105dfd35daf7464"
     ),
