@@ -83,7 +83,7 @@ def test_initial_github_bindings_point_to_canonical_adapter_repositories() -> No
         "repository": "FAROTECH/orbitfabric-openc3-cosmos-adapter"
     }
     assert bindings["github-farotech-fprime"].config == {
-        "repository": "FAROTECH/orbitfabric-fprime-adapter"
+        "repository": "OrbitFabric/orbitfabric-fprime-adapter"
     }
     assert bindings["github-farotech-eds-cfs"].config == {
         "repository": "OrbitFabric/orbitfabric-eds-cfs-adapter"
