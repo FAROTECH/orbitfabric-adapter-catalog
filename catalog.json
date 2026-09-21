@@ -48,6 +48,28 @@
     },
     {
       "source_coordinate": {
+        "authority": "github.com/OrbitFabric",
+        "publisher": "orbitfabric",
+        "name": "openc3-cosmos"
+      },
+      "releases": [
+        {
+          "version": "0.2.0",
+          "release_descriptor_digest": {
+            "algorithm": "sha256",
+            "value": "50ca24731e759dffed1b8735ec408b57d4fab97fd49f17c7cdd8a5de378dc04c"
+          },
+          "sources": [
+            {
+              "binding": "github-farotech-openc3-cosmos",
+              "release_ref": "v0.2.0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_coordinate": {
         "authority": "github.com/FAROTECH",
         "publisher": "orbitfabric",
         "name": "fprime"
