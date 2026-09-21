@@ -116,7 +116,7 @@
       "id": "github-farotech-openc3-cosmos",
       "provider": "github-release",
       "config": {
-        "repository": "FAROTECH/orbitfabric-openc3-cosmos-adapter"
+        "repository": "OrbitFabric/orbitfabric-openc3-cosmos-adapter"
       }
     },
     {
