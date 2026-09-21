@@ -17,10 +17,12 @@ Artifact membership remains owned by each adapter's `adapter-release.json` Relea
 
 ```text
 OpenOBSW/OpenSVF   0.1.0
-OpenC3 COSMOS      0.1.0
+OpenC3 COSMOS      0.1.0, 0.2.0
 F Prime            0.1.1, 0.1.2
 EDS-cFS            0.1.0
 ```
+
+OpenC3 COSMOS currently demonstrates Source Coordinate coexistence across the GitHub ownership migration. Historical `0.1.0` remains under `github.com/FAROTECH`; post-migration `0.2.0` uses `github.com/OrbitFabric`. Both resolve through the canonical physical Organization repository binding.
 
 ## What Catalog membership means
 
