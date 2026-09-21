@@ -130,7 +130,7 @@
       "id": "github-farotech-eds-cfs",
       "provider": "github-release",
       "config": {
-        "repository": "FAROTECH/orbitfabric-eds-cfs-adapter"
+        "repository": "OrbitFabric/orbitfabric-eds-cfs-adapter"
       }
     }
   ]
