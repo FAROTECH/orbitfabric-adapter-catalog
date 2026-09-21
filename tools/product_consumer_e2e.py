@@ -14,9 +14,10 @@ from orbitfabric.adapter_manager import (
     AdapterManager,
     ProjectLockInstallService,
     ProjectLockService,
-    select_exact_release_by_logical_key,
+    select_exact_release,
 )
 from orbitfabric.adapter_manager.errors import ProjectLockError
+from orbitfabric.adapter_manager.models import AdapterSourceCoordinate
 from orbitfabric_github_release_source import GitHubReleaseSource, GitHubReleaseSourceError
 
 
@@ -56,13 +57,14 @@ def assert_no_installed_state(manager: AdapterManager) -> None:
 
 
 def tampered_catalog_for_descriptor_digest(
-    payload: dict[str, Any], *, name: str, version: str
+    payload: dict[str, Any], *, authority: str, name: str, version: str
 ) -> AdapterCatalog:
     mutated = copy.deepcopy(payload)
     matches = [
         adapter
         for adapter in mutated["adapters"]
-        if adapter["source_coordinate"]["publisher"] == "orbitfabric"
+        if adapter["source_coordinate"]["authority"] == authority
+        and adapter["source_coordinate"]["publisher"] == "orbitfabric"
         and adapter["source_coordinate"]["name"] == name
     ]
     if len(matches) != 1:
@@ -82,11 +84,15 @@ def write_identity_mismatch_lock(lock_path: Path, output_path: Path) -> None:
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
     catalog, catalog_payload = fetch_catalog(args.catalog_url)
-    selection = select_exact_release_by_logical_key(
-        catalog,
+    source_coordinate = AdapterSourceCoordinate(
+        authority=args.authority,
         publisher="orbitfabric",
         name=args.adapter,
-        release_version=args.version,
+    )
+    selection = select_exact_release(
+        catalog,
+        source_coordinate,
+        args.version,
     )
 
     lock_path = args.lock.resolve()
@@ -179,14 +185,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         # provider resolution and must not create install state or local release bytes.
         bad_catalog = tampered_catalog_for_descriptor_digest(
             catalog_payload,
+            authority=args.authority,
             name=args.adapter,
             version=args.version,
         )
-        bad_selection = select_exact_release_by_logical_key(
+        bad_selection = select_exact_release(
             bad_catalog,
-            publisher="orbitfabric",
-            name=args.adapter,
-            release_version=args.version,
+            source_coordinate,
+            args.version,
         )
         negative_integrity_manager = AdapterManager(state_root=root / "negative-integrity-state")
         negative_resolver = CountingGitHubResolver()
@@ -238,6 +244,7 @@ def parser() -> argparse.ArgumentParser:
         description="Run the OrbitFabric P3 Catalog-to-installed-state consumer E2E proof."
     )
     result.add_argument("--catalog-url", required=True)
+    result.add_argument("--authority", required=True)
     result.add_argument("--adapter", required=True)
     result.add_argument("--version", required=True)
     result.add_argument("--lock", type=Path, required=True)
