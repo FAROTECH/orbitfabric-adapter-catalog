@@ -13,7 +13,7 @@ Adapter Source Coordinate
 
 Artifact membership remains owned by each adapter's `adapter-release.json` Release Descriptor and is intentionally not duplicated here.
 
-## Current canonical entries
+## Indexed exact releases (including historical identity)
 
 ```text
 OpenOBSW/OpenSVF   0.1.0
@@ -55,3 +55,11 @@ The Catalog is an additive discovery/acquisition convenience. OrbitFabric's expl
 The Catalog data model and exact-selection semantics are owned by OrbitFabric Core. This repository owns maintained Catalog **contents**, not a second schema definition.
 
 `catalog_version` identifies the Catalog data format. It is not the revision number of this repository's contents. Content history is tracked through Git commits, pull requests and, when introduced, data-product tags.
+
+## Post-migration authority and exact selection
+
+Decision 004 makes `github.com/OrbitFabric` the only current authority for OrbitFabric-maintained releases. Historical FAROTECH coordinates and descriptor digests above remain immutable. Operational binding identifiers now use `github-orbitfabric-*`; physical repositories are unchanged.
+
+Core selects logical key plus exact requested version across all records: one match succeeds, zero fails, multiple fail as ambiguous. Historical COSMOS 0.1.0 does not make Organization COSMOS 0.2.0 ambiguous. No authority preference or remapping applies.
+
+Unpublished candidate versions must not enter `catalog.json`. After approved release publication, add each exact descriptor digest and canonical coordinate, retaining historical entries.

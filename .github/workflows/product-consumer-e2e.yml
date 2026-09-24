@@ -1,3 +1,4 @@
+# Historical release identity regression: FAROTECH coordinates below are immutable.
 name: Product consumer E2E
 
 on:

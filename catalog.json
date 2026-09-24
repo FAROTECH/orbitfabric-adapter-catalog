@@ -17,7 +17,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-openobsw-opensvf",
+              "binding": "github-orbitfabric-openobsw-opensvf",
               "release_ref": "v0.1.0"
             }
           ]
@@ -39,7 +39,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-openc3-cosmos",
+              "binding": "github-orbitfabric-openc3-cosmos",
               "release_ref": "v0.1.0"
             }
           ]
@@ -61,7 +61,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-openc3-cosmos",
+              "binding": "github-orbitfabric-openc3-cosmos",
               "release_ref": "v0.2.0"
             }
           ]
@@ -83,7 +83,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-fprime",
+              "binding": "github-orbitfabric-fprime",
               "release_ref": "v0.1.1"
             }
           ]
@@ -96,7 +96,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-fprime",
+              "binding": "github-orbitfabric-fprime",
               "release_ref": "v0.1.2"
             }
           ]
@@ -118,7 +118,7 @@
           },
           "sources": [
             {
-              "binding": "github-farotech-eds-cfs",
+              "binding": "github-orbitfabric-eds-cfs",
               "release_ref": "v0.1.0"
             }
           ]
@@ -128,28 +128,28 @@
   ],
   "source_bindings": [
     {
-      "id": "github-farotech-openobsw-opensvf",
+      "id": "github-orbitfabric-openobsw-opensvf",
       "provider": "github-release",
       "config": {
         "repository": "OrbitFabric/orbitfabric-openobsw-opensvf-adapter"
       }
     },
     {
-      "id": "github-farotech-openc3-cosmos",
+      "id": "github-orbitfabric-openc3-cosmos",
       "provider": "github-release",
       "config": {
         "repository": "OrbitFabric/orbitfabric-openc3-cosmos-adapter"
       }
     },
     {
-      "id": "github-farotech-fprime",
+      "id": "github-orbitfabric-fprime",
       "provider": "github-release",
       "config": {
         "repository": "OrbitFabric/orbitfabric-fprime-adapter"
       }
     },
     {
-      "id": "github-farotech-eds-cfs",
+      "id": "github-orbitfabric-eds-cfs",
       "provider": "github-release",
       "config": {
         "repository": "OrbitFabric/orbitfabric-eds-cfs-adapter"

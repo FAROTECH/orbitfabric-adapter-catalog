@@ -79,16 +79,16 @@ def test_every_declared_binding_is_referenced() -> None:
 def test_initial_github_bindings_point_to_canonical_adapter_repositories() -> None:
     catalog = load_catalog()
     bindings = {binding.id: binding for binding in catalog.source_bindings}
-    assert bindings["github-farotech-openobsw-opensvf"].config == {
+    assert bindings["github-orbitfabric-openobsw-opensvf"].config == {
         "repository": "OrbitFabric/orbitfabric-openobsw-opensvf-adapter"
     }
-    assert bindings["github-farotech-openc3-cosmos"].config == {
+    assert bindings["github-orbitfabric-openc3-cosmos"].config == {
         "repository": "OrbitFabric/orbitfabric-openc3-cosmos-adapter"
     }
-    assert bindings["github-farotech-fprime"].config == {
+    assert bindings["github-orbitfabric-fprime"].config == {
         "repository": "OrbitFabric/orbitfabric-fprime-adapter"
     }
-    assert bindings["github-farotech-eds-cfs"].config == {
+    assert bindings["github-orbitfabric-eds-cfs"].config == {
         "repository": "OrbitFabric/orbitfabric-eds-cfs-adapter"
     }
 
