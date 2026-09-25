@@ -23,9 +23,9 @@ permissions:
 
 env:
   ORBITFABRIC_CORE_REPOSITORY: OrbitFabric/orbitfabric
-  ORBITFABRIC_CORE_REF: 4ba7a0b51a071b91150be4271fef6c6010bc80fd
+  ORBITFABRIC_CORE_REF: 8037759580f251714b3d0ddd9b5ed7058e161d3c
   ORBITFABRIC_RELEASE_SOURCE_REPOSITORY: OrbitFabric/orbitfabric-github-release-source
-  ORBITFABRIC_RELEASE_SOURCE_REF: 710a4ccb0a1b8c02e36bc44789464d88ab3ab35d
+  ORBITFABRIC_RELEASE_SOURCE_REF: d3756262f9bc2f22bde789a8c06db8944b6dc120
 
 jobs:
   product-consumer-e2e:
@@ -59,6 +59,23 @@ jobs:
             adapter: eds-cfs
             version: 0.1.0
             lock: e2e/locks/eds-cfs-0.1.0.json
+
+          - authority: github.com/OrbitFabric
+            adapter: fprime
+            version: 0.1.3
+            lock: e2e/locks/fprime-0.1.3.json
+          - authority: github.com/OrbitFabric
+            adapter: eds-cfs
+            version: 0.1.1
+            lock: e2e/locks/eds-cfs-0.1.1.json
+          - authority: github.com/OrbitFabric
+            adapter: openc3-cosmos
+            version: 0.2.1
+            lock: e2e/locks/openc3-cosmos-0.2.1.json
+          - authority: github.com/OrbitFabric
+            adapter: openobsw-opensvf
+            version: 0.1.1
+            lock: e2e/locks/openobsw-opensvf-0.1.1.json
 
     steps:
       - uses: actions/checkout@v4

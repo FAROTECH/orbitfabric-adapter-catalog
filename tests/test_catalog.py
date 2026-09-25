@@ -3,7 +3,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from orbitfabric.adapter_manager import AdapterCatalog, select_exact_release
+from orbitfabric.adapter_manager import (
+    AdapterCatalog,
+    select_exact_release,
+    select_exact_release_by_logical_key,
+)
 from orbitfabric.adapter_manager.models import AdapterSourceCoordinate
 
 CATALOG_PATH = Path(__file__).parents[1] / "catalog.json"
@@ -26,6 +30,18 @@ EXPECTED_RELEASES = {
     ),
     ("github.com/FAROTECH", "orbitfabric", "eds-cfs", "0.1.0"): (
         "f1bc0df5417df23eaba8e51b37101568a300775d1d7dfdd1766ffa8c42631b39"
+    ),
+    ("github.com/OrbitFabric", "orbitfabric", "fprime", "0.1.3"): (
+        "b5e078ccf5a8ae61575b1a69dd6dafcf925cdebb4900e20c25a27efffdf23be1"
+    ),
+    ("github.com/OrbitFabric", "orbitfabric", "eds-cfs", "0.1.1"): (
+        "13175e1b638d91f4c6659f900dbcbad8bf85bdb10021dbfb6ff2de051265febb"
+    ),
+    ("github.com/OrbitFabric", "orbitfabric", "openc3-cosmos", "0.2.1"): (
+        "a91e15655a9dfc9ffd7a42d3e94dbbd24be580c6a2bd58b87904e2f985346a97"
+    ),
+    ("github.com/OrbitFabric", "orbitfabric", "openobsw-opensvf", "0.1.1"): (
+        "de1d4e57e7c81bd08321d1ed25a017933f39d1a0f90831da99d805f1345e4e22"
     ),
 }
 
@@ -107,3 +123,19 @@ def test_catalog_contains_no_trust_or_endorsement_classification_fields() -> Non
                 walk(child)
 
     walk(payload)
+
+
+def test_logical_exact_selection_is_unique_for_every_recorded_release() -> None:
+    catalog = load_catalog()
+
+    for adapter in catalog.adapters:
+        coordinate = adapter.source_coordinate
+        for release in adapter.releases:
+            selected = select_exact_release_by_logical_key(
+                catalog,
+                publisher=coordinate.publisher,
+                name=coordinate.name,
+                release_version=release.version,
+            )
+            assert selected.source_coordinate == coordinate
+            assert selected.release_version == release.version
