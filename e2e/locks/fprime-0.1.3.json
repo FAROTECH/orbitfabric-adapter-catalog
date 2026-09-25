@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/OrbitFabric",
+        "publisher": "orbitfabric",
+        "name": "fprime"
+      },
+      "release_version": "0.1.3",
+      "release_descriptor": {
+        "sha256": "b5e078ccf5a8ae61575b1a69dd6dafcf925cdebb4900e20c25a27efffdf23be1"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "af312539ddd779091608bcaa16f8959983bb82397e92097ec1119d0f8c3f3ba5"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}

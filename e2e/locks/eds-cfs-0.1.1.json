@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/OrbitFabric",
+        "publisher": "orbitfabric",
+        "name": "eds-cfs"
+      },
+      "release_version": "0.1.1",
+      "release_descriptor": {
+        "sha256": "13175e1b638d91f4c6659f900dbcbad8bf85bdb10021dbfb6ff2de051265febb"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "cd30ce00613d4ad4a86e17543aacd319c6cf9794dd33381ee84ad93134fec411"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}

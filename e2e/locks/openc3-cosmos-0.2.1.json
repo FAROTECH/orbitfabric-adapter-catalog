@@ -1,0 +1,24 @@
+{
+  "kind": "orbitfabric.adapter_project_lock",
+  "lock_version": "0.1-candidate",
+  "adapters": [
+    {
+      "source_coordinate": {
+        "authority": "github.com/OrbitFabric",
+        "publisher": "orbitfabric",
+        "name": "openc3-cosmos"
+      },
+      "release_version": "0.2.1",
+      "release_descriptor": {
+        "sha256": "a91e15655a9dfc9ffd7a42d3e94dbbd24be580c6a2bd58b87904e2f985346a97"
+      },
+      "artifact": {
+        "id": "python-wheel",
+        "sha256": "59c45abb71571d9dc2ad5feb2c70215cc77da016be30ee9dc8753af2327b5837"
+      },
+      "installation_backend": {
+        "id": "python-wheel-managed-env"
+      }
+    }
+  ]
+}
